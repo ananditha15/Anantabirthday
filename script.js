@@ -3,6 +3,9 @@ const card = document.getElementById("card");
 const music = document.getElementById("music");
 const message = document.getElementById("message");
 const ending = document.getElementById("ending");
+const question = document.getElementById("question");
+const answerText = document.getElementById("answer");
+
 
 const text = `
 Sayang, happy birthday yaaa ❤️
@@ -44,6 +47,14 @@ function typeText() {
     }, 800);
   }
 }
+function answer(type) {
+  if (type === "sayang") {
+    answerText.innerHTML = "Aku tau kok 🤍";
+  } else {
+    answerText.innerHTML = "Aku juga sayang kamu, banget 🤍";
+  }
+  answerText.classList.remove("hidden");
+}
 
 openScreen.addEventListener("click", () => {
   openScreen.style.display = "none";
@@ -52,3 +63,5 @@ openScreen.addEventListener("click", () => {
   music.play();
   typeText();
 });
+
+

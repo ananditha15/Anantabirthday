@@ -3,6 +3,7 @@ const openScreen = document.getElementById("openScreen");
 const card = document.getElementById("card");
 const music = document.getElementById("music");
 const message = document.getElementById("message");
+const photoContainer = document.getElementById("photoContainer");
 const ending = document.getElementById("ending");
 const question = document.getElementById("question");
 const answerText = document.getElementById("answer");
@@ -44,7 +45,13 @@ function typeText() {
     message.innerHTML += text.charAt(index);
     index++;
     setTimeout(typeText, 40);
+  } else {
+    // SETELAH TEKS SELESAI
+    photoContainer.classList.remove("hidden");
+
+    setTimeout(showEnding, 3000);
   }
+
 }
 
 // SHOW ENDING

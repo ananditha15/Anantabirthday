@@ -29,29 +29,34 @@
 
     <span>With all my love Malini🤍</span>
 
+ <!-- PHOTO -->
+    <div class="photo-container">
+      <img src="photo.jpg" alt="Foto Kita" class="photo" />
+    </div>
+
     <!-- ENDING -->
-    <div class="ending hidden" id="ending">
-      <img src="photo.jpg" alt="Us">
-      <p class="ending-text">
-        I love you, Ananta 🤍<br>
-        ❤️❤️❤️
-      </p>
-      <p class="final-text">Always, no matter what.</p>
+    <div id="ending" class="hidden">
+
+      <!-- QUESTION -->
+      <div class="question hidden" id="question">
+        <p class="question-text">Kamu sayang aku gak?</p>
+
+        <div class="options">
+          <button id="btnSayang">Sayang 🤍</button>
+          <button id="btnBanget">Sayang banget 🤍</button>
+        </div>
+
+        <p class="answer hidden" id="answer"></p>
+      </div>
+
     </div>
   </div>
 
+  <!-- MUSIC -->
+  <audio id="music" src="music.mp3" preload="auto"></audio>
+
+  <!-- JS -->
   <script src="script.js"></script>
+
 </body>
 </html>
-
-<!-- QUESTION -->
-<div class="question hidden" id="question">
-  <p class="question-text">Kamu sayang aku gak?</p>
-
-  <div class="options">
-    <button id="btnSayang">Sayang 🤍</button>
-    <button id="btnBanget">Sayang banget 🤍</button>
-  </div>
-
-  <p class="answer hidden" id="answer"></p>
-</div>

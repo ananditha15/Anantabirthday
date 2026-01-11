@@ -149,3 +149,11 @@ span {
   font-size: 16px;
   color: #777;
 }
+
+.question {
+  color: #444;
+}
+
+.options button {
+  cursor: pointer;
+}

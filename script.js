@@ -40,10 +40,10 @@ function typeText() {
     index++;
     setTimeout(typeText, 40);
   } else {
-    // setelah teks selesai → munculin ending pelan
     setTimeout(() => {
       ending.classList.remove("hidden");
       ending.classList.add("show");
+      question.classList.remove("hidden");
     }, 800);
   }
 }

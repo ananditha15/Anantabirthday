@@ -6,6 +6,9 @@ const ending = document.getElementById("ending");
 const question = document.getElementById("question");
 const answerText = document.getElementById("answer");
 
+const btnSayang = document.getElementById("btnSayang");
+const btnBanget = document.getElementById("btnBanget");
+
 
 const text = `
 Sayang, happy birthday yaaa ❤️
@@ -39,30 +42,38 @@ function typeText() {
     message.innerHTML += text.charAt(index);
     index++;
     setTimeout(typeText, 40);
-  } else {
-    // SETELAH TEKS SELESAI
-    setTimeout(() => {
-      ending.classList.remove("hidden");
-      ending.classList.add("show");
-
-      question.classList.remove("hidden"); // ⬅️ INI YANG SERING KELEWAT
-    }, 800);
   }
-}
-
-function answer(type) {
-  if (type === "sayang") {
-    answerText.innerHTML = "Aku tau kok 🤍";
-  } else {
-    answerText.innerHTML = "Aku juga sayang kamu, banget 🤍";
-  }
-  answerText.classList.remove("hidden");
 }
 
 openScreen.addEventListener("click", () => {
   openScreen.style.display = "none";
   card.classList.remove("hidden");
+
   music.currentTime = 5;
   music.play();
+
   typeText();
+});
+
+// 🔑 TRIGGER BERDASARKAN SCROLL (PALING AMAN)
+card.addEventListener("scroll", () => {
+  const scrollBottom =
+    card.scrollTop + card.clientHeight >= card.scrollHeight - 10;
+
+  if (scrollBottom) {
+    question.classList.remove("hidden");
+    ending.classList.remove("hidden");
+    ending.classList.add("show");
+  }
+});
+
+// JAWABAN
+btnSayang.addEventListener("click", () => {
+  answerText.innerHTML = "Aku tau kok 🤍";
+  answerText.classList.remove("hidden");
+});
+
+btnBanget.addEventListener("click", () => {
+  answerText.innerHTML = "Aku juga sayang kamu, banget 🤍";
+  answerText.classList.remove("hidden");
 });

@@ -48,6 +48,7 @@ function typeText() {
 openScreen.addEventListener("click", () => {
   openScreen.style.display = "none";
   card.classList.remove("hidden");
+  music.currentTime = 7;
   music.play();
   typeText();
 });

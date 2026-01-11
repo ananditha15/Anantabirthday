@@ -1,3 +1,4 @@
+// ELEMENT
 const openScreen = document.getElementById("openScreen");
 const card = document.getElementById("card");
 const music = document.getElementById("music");
@@ -9,7 +10,7 @@ const answerText = document.getElementById("answer");
 const btnSayang = document.getElementById("btnSayang");
 const btnBanget = document.getElementById("btnBanget");
 
-
+//TEXT 
 const text = `
 Sayang, happy birthday yaaa ❤️
 
@@ -35,6 +36,7 @@ Terimakasih sudah hidup dan ketemu aku ❤️
 Semoga kamu selalu sehat dan bahagia.
 `;
 
+// TYPEWRITER
 let index = 0;
 
 function typeText() {
@@ -45,29 +47,31 @@ function typeText() {
   }
 }
 
+// SHOW ENDING
+function showEnding() {
+  ending.classList.remove("hidden");
+  ending.classList.add("show");
+
+  question.classList.remove("hidden");
+}
+
+// OPEN SCREEN CLICK
 openScreen.addEventListener("click", () => {
   openScreen.style.display = "none";
   card.classList.remove("hidden");
 
+  // MUSIC
   music.currentTime = 5;
-  music.play();
+  music.play().catch(() => {});
 
+  // START TEXT
   typeText();
+
+  // SHOW QUESTION AFTER 12s
+  setTimeout(showEnding, 12000);
 });
 
-// 🔑 TRIGGER BERDASARKAN SCROLL (PALING AMAN)
-card.addEventListener("scroll", () => {
-  const scrollBottom =
-    card.scrollTop + card.clientHeight >= card.scrollHeight - 10;
-
-  if (scrollBottom) {
-    question.classList.remove("hidden");
-    ending.classList.remove("hidden");
-    ending.classList.add("show");
-  }
-});
-
-// JAWABAN
+// ANSWERS
 btnSayang.addEventListener("click", () => {
   answerText.innerHTML = "Aku tau kok 🤍";
   answerText.classList.remove("hidden");

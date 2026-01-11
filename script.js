@@ -40,13 +40,16 @@ function typeText() {
     index++;
     setTimeout(typeText, 40);
   } else {
+    // SETELAH TEKS SELESAI
     setTimeout(() => {
       ending.classList.remove("hidden");
       ending.classList.add("show");
-      question.classList.remove("hidden");
+
+      question.classList.remove("hidden"); // ⬅️ INI YANG SERING KELEWAT
     }, 800);
   }
 }
+
 function answer(type) {
   if (type === "sayang") {
     answerText.innerHTML = "Aku tau kok 🤍";
@@ -63,5 +66,3 @@ openScreen.addEventListener("click", () => {
   music.play();
   typeText();
 });
-
-
